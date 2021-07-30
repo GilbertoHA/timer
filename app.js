@@ -13,19 +13,23 @@ class Timer {
     this.pauseButton.addEventListener('click', this.pause);
   }
 
-  start() {
-    console.log('Time to start the timer');
-  }
+  start = () => {
+    this.tick();
+    this.interval = setInterval(this.tick, 1000);
+  };
 
-  pause() {
+  pause = () => {
     console.log('Pausing the timer');
-  }
+    clearInterval(this.interval);
+  };
 
   onDurationChange() {
-    console.log('You changed the timer  ');
+    console.log('You changed the timer');
   }
 
-  tick() {}
+  tick = () => {
+    console.log('tick');
+  };
 }
 
-const myTimer = new Timer(inputTime, startBtn, pauseBtn);
+const timer = new Timer(inputTime, startBtn, pauseBtn);
