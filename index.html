@@ -5,11 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Timer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <input type="text" name="duration" id="duration" />
-    <button id="start">Start</button>
-    <button id="pause">Pause</button>
+    <div class="container">
+      <div class="timer">
+        <div class="controls">
+          <input id="duration" value="3" />
+          <div>
+            <button id="start"><i class="far fa-play-circle"></i></button>
+            <button id="pause"><i class="far fa-pause-circle"></i></button>
+          </div>
+        </div>
+        <svg class="dial">
+          <circle
+            id="circle"
+            r="190"
+            cx="200"
+            cy="200"
+            fill="transparent"
+            stroke="#dffff4"
+            stroke-width="10"
+            transform-origin="50% 50%"
+            transform="rotate(-90) scale(1, -1)"
+          />
+          <!-- stroke-drasharray = val1 => dash width. val2 => space between dashes -->
+        </svg>
+      </div>
+      <i id="bg-btn" class="fas fa-images"></i>
+    </div>
+
+    <script src="bg-changer.js"></script>
     <script src="timer.js"></script>
     <script src="app.js"></script>
   </body>
